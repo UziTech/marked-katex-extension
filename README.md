@@ -14,6 +14,12 @@ c = \\pm\\sqrt{a^2 + b^2}
 $$
 ```
 
+You will still need to include the css in your html document to allow katex styles.
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+```
+
 # Usage
 
 ```js
