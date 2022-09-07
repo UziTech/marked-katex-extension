@@ -1,10 +1,3 @@
-# TODO:
-
-- [ ] Replace information in `/README.md`
-- [ ] Uncomment release in `/.github/workflows/main.yml`
-
-<!-- Delete this line and above -->
-
 # marked-katex-extension
 
 Render [katex](https://katex.org/) code in marked
@@ -32,7 +25,7 @@ const markedKatex = require("marked-katex-extension");
 // import markedKatex from "https://cdn.jsdelivr.net/gh/UziTech/marked-katex-extension/lib/index.mjs";
 
 const options = {
-	throwOnError: false
+  throwOnError: false
 };
 
 marked.use(markedKatex(options));
@@ -40,7 +33,7 @@ marked.use(markedKatex(options));
 marked("katex: $c = \\pm\\sqrt{a^2 + b^2}$");
 ```
 
-
+![image](https://user-images.githubusercontent.com/97994/188899567-e6e8268c-209e-4067-8f44-0ada16caacdd.png)
 
 ## `options`
 
