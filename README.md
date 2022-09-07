@@ -1,40 +1,47 @@
-<!-- The character `|` around a string denotes a place in this markdown file that needs to be changed for each extension. -->
-<!-- You may also delete any comments you don't need anymore. -->
-
 # TODO:
 
 - [ ] Replace information in `/README.md`
-- [ ] Replace information in `/package.json`
-- [ ] Write extension in `/src/index.js`
-- [ ] Write tests in `/spec/index.test.js`
 - [ ] Uncomment release in `/.github/workflows/main.yml`
 
 <!-- Delete this line and above -->
 
-# marked-|this-extension|
-<!-- Description -->
+# marked-katex-extension
+
+Render [katex](https://katex.org/) code in marked
+
+Note: Block level katex requires at least 2 `$` at the beginning and end.
+
+```markdown
+This is inline katex: $c = \\pm\\sqrt{a^2 + b^2}$
+
+This is block level katex:
+
+$$
+c = \\pm\\sqrt{a^2 + b^2}
+$$
+```
 
 # Usage
-<!-- Show most examples of how to use this extension -->
 
 ```js
-const marked = require("marked");
-const |thisExtension| = require("marked-|this-extension|");
+const {marked} = require("marked");
+const markedKatex = require("marked-katex-extension");
 
 // or ES Module script
 // import marked from "https://cdn.jsdelivr.net/gh/markedjs/marked/lib/marked.esm.js";
-// import this extension from "https://cdn.jsdelivr.net/gh/UziTech/marked-|this-extension|/lib/index.mjs";
+// import markedKatex from "https://cdn.jsdelivr.net/gh/UziTech/marked-katex-extension/lib/index.mjs";
 
 const options = {
-	// |default options|
+	throwOnError: false
 };
 
-marked.use(|thisExtension|(options));
+marked.use(markedKatex(options));
 
-marked("|example markdown|");
-// <p>|example html|</p>
+marked("katex: $c = \\pm\\sqrt{a^2 + b^2}$");
 ```
+
+
 
 ## `options`
 
-<!-- If there are no options you can delete this section -->
+Options are sent directly to [`katex.renderToString`](https://katex.org/docs/api.html#server-side-rendering-or-rendering-to-a-string)

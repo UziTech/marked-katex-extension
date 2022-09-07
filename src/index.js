@@ -1,24 +1,52 @@
+import katex from 'katex';
+
 export default function(options = {}) {
-  // extension code here
-
   return {
-    tokenizer: {
-      paragraph(src) {
-        if (src !== 'example markdown') {
-          return false;
-        }
+    extensions: [
+      inlineKatex(options),
+      blockKatex(options)
+    ]
+  };
+}
 
-        const token = {
-          type: 'paragraph',
-          raw: src,
-          text: 'example html',
-          tokens: []
+function inlineKatex(options) {
+  return {
+    name: 'inlineKatex',
+    level: 'inline',
+    start(src) { return src.indexOf('$'); },
+    tokenizer(src, tokens) {
+      const match = src.match(/^\$+([^$\n]+?)\$+/);
+      if (match) {
+        return {
+          type: 'inlineKatex',
+          raw: match[0],
+          text: match[1].trim()
         };
-
-        this.lexer.inline(token.text, token.tokens);
-
-        return token;
       }
+    },
+    renderer(token) {
+      return katex.renderToString(token.text, options);
+    }
+  };
+}
+
+function blockKatex(options) {
+  return {
+    name: 'blockKatex',
+    level: 'block',
+    start(src) { return src.indexOf('\n$$'); },
+    tokenizer(src, tokens) {
+      const match = src.match(/^\$\$+\n([^$]+?)\n\$\$+\n/);
+      if (match) {
+        return {
+          type: 'blockKatex',
+          raw: match[0],
+          text: match[1].trim()
+        };
+      }
+    },
+    renderer(token) {
+      return `<p>${katex.renderToString(token.text, options)}</p>`;
     }
   };
 }
