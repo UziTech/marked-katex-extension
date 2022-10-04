@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-env": "^7.19.3",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
