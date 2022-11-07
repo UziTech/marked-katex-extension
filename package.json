@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/UziTech/marked-katex-extension#readme",
   "peerDependencies": {
-    "marked": "^4.1.1"
+    "marked": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -46,7 +46,7 @@
     "eslint-plugin-n": "^15.4.0",
     "eslint-plugin-promise": "^6.1.1",
     "jest-cli": "^29.2.2",
-    "marked": "^4.1.1",
+    "marked": "^4.2.2",
     "rollup": "^3.2.4",
     "semantic-release": "^19.0.5"
   },
