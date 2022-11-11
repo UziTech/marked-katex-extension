@@ -51,6 +51,7 @@
     "semantic-release": "^19.0.5"
   },
   "dependencies": {
+    "@types/marked": "^4.0.7",
     "katex": "^0.16.3"
   }
 }
