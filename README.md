@@ -23,12 +23,12 @@ You will still need to include the css in your html document to allow katex styl
 # Usage
 
 ```js
-const {marked} = require("marked");
-const markedKatex = require("marked-katex-extension");
+import {marked} from "marked";
+import markedKatex from "marked-katex-extension";
 
-// or ES Module script
-// import marked from "https://cdn.jsdelivr.net/gh/markedjs/marked/lib/marked.esm.js";
-// import markedKatex from "https://cdn.jsdelivr.net/gh/UziTech/marked-katex-extension/lib/index.mjs";
+// or UMD script
+// <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+// <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension/lib/index.umd.js"></script>
 
 const options = {
   throwOnError: false
@@ -36,7 +36,7 @@ const options = {
 
 marked.use(markedKatex(options));
 
-marked("katex: $c = \\pm\\sqrt{a^2 + b^2}$");
+marked.parse("katex: $c = \\pm\\sqrt{a^2 + b^2}$");
 ```
 
 ![image](https://user-images.githubusercontent.com/97994/188899567-e6e8268c-209e-4067-8f44-0ada16caacdd.png)

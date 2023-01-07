@@ -10,6 +10,10 @@
     "katex",
     "extension"
   ],
+  "files": [
+    "lib/",
+    "src/"
+  ],
   "scripts": {
     "test": "jest --verbose",
     "test:cover": "jest --coverage",
