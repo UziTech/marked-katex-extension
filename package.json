@@ -44,14 +44,14 @@
     "@semantic-release/npm": "^9.0.2",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "babel-jest": "^29.5.0",
-    "eslint": "^8.35.0",
+    "eslint": "^8.36.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "jest-cli": "^29.5.0",
     "marked": "^4.2.12",
-    "rollup": "^3.17.3",
+    "rollup": "^3.19.1",
     "semantic-release": "^20.1.1"
   },
   "dependencies": {
