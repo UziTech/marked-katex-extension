@@ -52,7 +52,7 @@
     "jest-cli": "^29.5.0",
     "marked": "^4.3.0",
     "rollup": "^3.20.2",
-    "semantic-release": "^21.0.0"
+    "semantic-release": "^21.0.1"
   },
   "dependencies": {
     "katex": "^0.16.4"
