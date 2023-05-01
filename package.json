@@ -62,6 +62,6 @@
     "semantic-release": "^21.0.1"
   },
   "dependencies": {
-    "katex": "^0.16.6"
+    "katex": "^0.16.7"
   }
 }
