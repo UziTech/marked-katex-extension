@@ -6,6 +6,7 @@
   "module": "./src/index.js",
   "browser": "./lib/index.umd.js",
   "type": "module",
+  "types": "./src/index.d.ts",
   "keywords": [
     "marked",
     "katex",
@@ -50,6 +51,8 @@
     "@semantic-release/github": "^8.0.7",
     "@semantic-release/npm": "^10.0.3",
     "@semantic-release/release-notes-generator": "^11.0.1",
+    "@types/katex": "^0.16.0",
+    "@types/marked": "^5.0.0",
     "babel-jest": "^29.5.0",
     "eslint": "^8.41.0",
     "eslint-config-standard": "^17.0.0",
