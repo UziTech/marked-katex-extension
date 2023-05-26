@@ -1,5 +1,1 @@
-declare module 'marked-katex-extension' {
-  function markedKatex(options?: import('katex').KatexOptions): import('marked').marked.MarkedExtension
-
-  export default markedKatex
-}
+export default function markedKatex(options?: import('katex').KatexOptions): import('marked').marked.MarkedExtension
