@@ -25,6 +25,7 @@
   "scripts": {
     "test": "jest --verbose",
     "test:cover": "jest --coverage",
+    "test:types": "tsd -f spec/index.test-d.ts -t src/index.d.ts",
     "lint": "eslint .",
     "build": "rollup -c rollup.config.js"
   },
@@ -61,7 +62,8 @@
     "jest-cli": "^29.5.0",
     "marked": "^5.0.2",
     "rollup": "^3.23.0",
-    "semantic-release": "^21.0.2"
+    "semantic-release": "^21.0.2",
+    "tsd": "^0.28.1"
   },
   "dependencies": {
     "@types/katex": "^0.16.0",
