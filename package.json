@@ -6,6 +6,7 @@
   "module": "./src/index.js",
   "browser": "./lib/index.umd.js",
   "type": "module",
+  "types": "./src/index.d.ts",
   "keywords": [
     "marked",
     "katex",
@@ -24,6 +25,7 @@
   "scripts": {
     "test": "jest --verbose",
     "test:cover": "jest --coverage",
+    "test:types": "tsd -f spec/index.test-d.ts -t src/index.d.ts",
     "lint": "eslint .",
     "build": "rollup -c rollup.config.js"
   },
@@ -50,6 +52,7 @@
     "@semantic-release/github": "^8.0.7",
     "@semantic-release/npm": "^10.0.3",
     "@semantic-release/release-notes-generator": "^11.0.1",
+    "@types/marked": "^5.0.0",
     "babel-jest": "^29.5.0",
     "eslint": "^8.41.0",
     "eslint-config-standard": "^17.0.0",
@@ -59,9 +62,11 @@
     "jest-cli": "^29.5.0",
     "marked": "^5.0.2",
     "rollup": "^3.23.0",
-    "semantic-release": "^21.0.2"
+    "semantic-release": "^21.0.2",
+    "tsd": "^0.28.1"
   },
   "dependencies": {
+    "@types/katex": "^0.16.0",
     "katex": "^0.16.7"
   }
 }
