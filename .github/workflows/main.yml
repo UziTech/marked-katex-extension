@@ -13,9 +13,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: Install Node
-        uses: dcodeIO/setup-node-nvm@master
+        uses: actions/setup-node@v3
         with:
-          node-version: node
+          node-version: '*'
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests 👩🏽‍💻
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: Install Node
-        uses: dcodeIO/setup-node-nvm@master
+        uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
       - name: Install Dependencies
@@ -41,7 +41,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
       - name: Install Node
-        uses: dcodeIO/setup-node-nvm@master
+        uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
       - name: Install Dependencies
@@ -54,6 +54,10 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
       - name: Install Dependencies
         run: npm ci
       - name: Lint ✨
@@ -64,6 +68,10 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
       - name: Install Dependencies
         run: npm ci
       - name: Build 🛠️
@@ -78,16 +86,14 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
       - name: Install Dependencies
         run: npm ci
       - name: Build 🗜️
-        run: |
-          npm run build
-          if ! git diff --quiet; then
-            git config --global user.email "<>"
-            git config --global user.name "CI Build"
-            git commit -am "🗜️ build [skip ci]"
-          fi
+        run: npm run build
       - name: Release 🎉
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
