@@ -67,6 +67,6 @@
   },
   "dependencies": {
     "@types/katex": "^0.16.0",
-    "katex": "^0.16.7"
+    "katex": "^0.16.8"
   }
 }
