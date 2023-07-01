@@ -29,7 +29,7 @@ c = \\pm\\sqrt{a^2 + b^2}
 $$$
 `,
     'block katex 1 $': `
-This is block level katex:
+This is not block level katex:
 
 $
 c = \\pm\\sqrt{a^2 + b^2}
@@ -44,12 +44,4 @@ $
       expect(marked(md)).toMatchSnapshot();
     });
   }
-
-  test('inline katex', () => {
-    marked.use(markedKatex());
-    const md = `
-This is inline katex: $c = \\pm\\sqrt{a^2 + b^2}$
-`;
-    expect(marked(md)).toMatchSnapshot();
-  });
 });

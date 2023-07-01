@@ -31,12 +31,14 @@ function inlineKatex(options) {
 }
 
 function blockKatex(options) {
+  const blockOptions = { displayMode: true, ...options };
+
   return {
     name: 'blockKatex',
     level: 'block',
     start(src) { return src.indexOf('\n$$'); },
     tokenizer(src, tokens) {
-      const match = src.match(/^\$\$+\n([^$]+?)\n\$\$+\n/);
+      const match = src.match(/^\$\$+\n([^$]+)\n\$\$+\n/);
       if (match) {
         return {
           type: 'blockKatex',
@@ -46,7 +48,7 @@ function blockKatex(options) {
       }
     },
     renderer(token) {
-      return `<p>${katex.renderToString(token.text, options)}</p>`;
+      return `${katex.renderToString(token.text, blockOptions)}`;
     }
   };
 }
