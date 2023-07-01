@@ -34,6 +34,9 @@ This is not block level katex:
 $
 c = \\pm\\sqrt{a^2 + b^2}
 $
+`,
+    'not katex': `
+not katex $300 $400
 `
   };
 
