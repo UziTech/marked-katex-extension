@@ -15,7 +15,7 @@ function inlineKatex(options) {
     level: 'inline',
     start(src) { return src.match(/(?:\s|^)\$+[^$\n]+\$+(?:\s|$)/)?.index; },
     tokenizer(src, tokens) {
-      const match = src.match(/^\$+([^$\n]+?)\$+/);
+      const match = src.match(/^\$+([^$\n]+)\$+(?=\s|$)/);
       if (match) {
         return {
           type: 'inlineKatex',

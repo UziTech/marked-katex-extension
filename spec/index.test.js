@@ -37,6 +37,12 @@ $
 `,
     'not katex': `
 not katex $300 $400
+`,
+    'not katex at beginning': `
+$300 $400 not katex
+`,
+    'not katex at end': `
+not katex 300$ 400$
 `
   };
 
