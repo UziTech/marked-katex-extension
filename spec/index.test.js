@@ -19,10 +19,10 @@ c = \\pm\\sqrt{a^2 + b^2}
 $$
 `,
     'inline katex more $': `
-This is inline katex: $$c = \\pm\\sqrt{a^2 + b^2}$$
+This is not inline katex: $$c = \\pm\\sqrt{a^2 + b^2}$$
 `,
     'block katex more $': `
-This is block level katex:
+This is not block level katex:
 
 $$$
 c = \\pm\\sqrt{a^2 + b^2}
@@ -43,6 +43,16 @@ $300 $400 not katex
 `,
     'not katex at end': `
 not katex 300$ 400$
+`,
+    'block katex with $ inside': `
+$$
+\\colorbox{aqua}{$
+\\frac{b}{2}\\sqrt{a^2-\\frac{b^2}{4}}
+a$}
+$$
+`,
+    'inline katex with $ inside': `
+this is inline katex: $a\\raisebox{0.25em}{$b$}c$
 `
   };
 
