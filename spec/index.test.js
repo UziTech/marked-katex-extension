@@ -21,8 +21,11 @@ $$
     'inline katex more $': `
 This is inline katex with displayMode: $$c = \\pm\\sqrt{a^2 + b^2}$$
 `,
+    'inline katex 3 $': `
+This is not inline katex: $$$c = \\pm\\sqrt{a^2 + b^2}$$$
+`,
     'block katex more $': `
-This is not block level katex:
+This is not katex:
 
 $$$
 c = \\pm\\sqrt{a^2 + b^2}
@@ -35,15 +38,9 @@ $
 c = \\pm\\sqrt{a^2 + b^2}
 $
 `,
-    'not katex': `
-not katex $300 $400
-`,
-    'not katex at beginning': `
-$300 $400 not katex
-`,
-    'not katex at end': `
-not katex 300$ 400$
-`,
+    'not katex': 'not katex $300 $400',
+    'not katex at beginning': '$300 $400 not katex',
+    'not katex at end': 'not katex 300$ 400$',
     'block katex with $ inside': `
 $$
 \\colorbox{aqua}{$
@@ -51,9 +48,9 @@ $$
 a$}
 $$
 `,
-    'inline katex with $ inside': `
-this is inline katex: $a\\raisebox{0.25em}{$b$}c$
-`
+    'inline katex with $ inside': 'this is inline katex: $a\\raisebox{0.25em}{$b$}c$',
+    'inline katex $$...$': 'this is not katex: $$a\\raisebox{0.25em}{$b$}c$',
+    'inline katex $...$$': 'this is not katex: $a\\raisebox{0.25em}{$b$}c$$'
   };
 
   for (const name in snapshots) {
