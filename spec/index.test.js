@@ -19,7 +19,7 @@ c = \\pm\\sqrt{a^2 + b^2}
 $$
 `,
     'inline katex more $': `
-This is not inline katex: $$c = \\pm\\sqrt{a^2 + b^2}$$
+This is inline katex with displayMode: $$c = \\pm\\sqrt{a^2 + b^2}$$
 `,
     'block katex more $': `
 This is not block level katex:
