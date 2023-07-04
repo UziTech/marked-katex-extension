@@ -7,6 +7,11 @@ Note: Block level katex requires at least 2 `$` at the beginning and end.
 ```markdown
 This is inline katex: $c = \\pm\\sqrt{a^2 + b^2}$
 
+This is also inline:
+$
+c = \\pm\\sqrt{a^2 + b^2}
+$
+
 This is block level katex:
 
 $$
@@ -17,7 +22,7 @@ $$
 You will still need to include the css in your html document to allow katex styles.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
 ```
 
 # Usage
