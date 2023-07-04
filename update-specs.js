@@ -2,6 +2,17 @@ import fetch from 'node-fetch';
 import { load } from 'cheerio';
 import { unlinkSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import katex from 'katex';
+
+function normalize(str) {
+  return str
+    .replace(/<(\w+)([^>]*)><\/\1>/g, '<$1$2/>')
+    .replace(/'|`|ˋ|ˊ|&quot;|&#x27;/g, '"')
+    .replace(/\s|&nbsp;/g, '')
+    .replace(/\\VERT|\\\|/ig, '|')
+    .replace('"=""', '"/')
+    .replace(/\\cr/g, '\\\\');
+}
 
 const commentsInSource = [
   ' Requires trust option',
@@ -15,26 +26,26 @@ const commentsInSource = [
   ' supports A-Z & k',
   ' Must enable trust and disable strict option'
 ];
-const specsToIgnore = [
-  '\\url',
-  '\\mathclap',
-  '\\hspace',
-  '\\endgroup',
-  '\\begingroup',
-  '\\angln',
-  '\\angl',
-  '\\}',
-  '\\{',
-  '\\vcenter',
-  '\\raisebox',
-  '\\mathscr',
-  '\\mathnormal',
-  '\\mathit',
-  '\\mathfrak',
-  '\\mathbb',
-  '\\dotsm',
-  '\\$'
-];
+// const specsToIgnore = [
+//   '\\url',
+//   '\\mathclap',
+//   '\\hspace',
+//   '\\endgroup',
+//   '\\begingroup',
+//   '\\angln',
+//   '\\angl',
+//   '\\}',
+//   '\\{',
+//   '\\vcenter',
+//   '\\raisebox',
+//   '\\mathscr',
+//   '\\mathnormal',
+//   '\\mathit',
+//   '\\mathfrak',
+//   '\\mathbb',
+//   '\\dotsm',
+//   '\\$'
+// ];
 
 async function updateSpecs() {
   const specsFile = resolve('./spec/specs.json');
@@ -59,9 +70,6 @@ async function updateSpecs() {
         const name = $(tds[0]).text()?.trim();
         const rendered = $(tds[1]).html()?.trim();
         let source = $(tds[2]).text()?.trim();
-        if (specsToIgnore.includes(name)) {
-          return;
-        }
         if (!rendered || rendered.includes('Not supported')) {
           return;
         }
@@ -77,16 +85,32 @@ async function updateSpecs() {
         for (const comment of commentsInSource) {
           source = source.replace(comment, '');
         }
-        specs.push({
+        source = source.replace(/\u00a0+/g, '\n');
+        if (!source) {
+          source = name;
+        }
+        const spec = {
           name,
           rendered,
-          source: source || name,
+          source,
           options: {
             displayMode: !!rendered?.includes('katex-display'),
             trust,
             strict
           }
-        });
+        };
+
+        let result;
+        try {
+          result = katex.renderToString(spec.source, spec.options);
+        } catch {}
+
+        if (!result || normalize(result) !== normalize(spec.rendered)) {
+          console.log(spec.name, 'does not render correctly');
+          spec.skip = true;
+        }
+
+        specs.push(spec);
       });
     });
     writeFileSync(specsFile, JSON.stringify(specs, null, 2).replace(/\u00a0+/g, '\\n') + '\n');

@@ -89,7 +89,7 @@ $$
       if (hasOnly && !s.only) {
         continue;
       }
-      (s.only ? test.only : test)(s.name, () => {
+      (s.only ? test.only : (s.skip ? test.skip : test))(s.name, () => {
         marked.use(markedKatex(s.options));
         const multiline = s.source.includes('\n');
         const md = multiline ? `$$\n${s.source}\n$$` : `$${s.source}$`;
