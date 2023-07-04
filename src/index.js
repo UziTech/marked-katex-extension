@@ -49,7 +49,7 @@ function blockKatex(options) {
         },
         renderer(token) {
             console.log('block');
-            return `${katex.renderToString(token.text, { ...options, fleqn: true, displayMode: true })}`;
+            return `${katex.renderToString(token.text, { ...options, displayMode: true })}`;
         }
     };
 }
