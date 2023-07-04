@@ -46,6 +46,11 @@ c53.7,-170.3,84.5,-266.8,92.5,-289.5z
 M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5693em;"><span></span></span></span></span></span><span class="mord mathnormal">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8693em;"><span></span></span></span></span></span></span></span></span></span>"
 `;
 
+exports[`marked-katex-extension block slash $ 1`] = `
+"<p>this is block katex:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">$</mi><mi mathvariant="normal">$</mi></mrow><annotation encoding="application/x-tex">\\$\\$</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">$$</span></span></span></span></span>"
+`;
+
 exports[`marked-katex-extension inline katex $$...$ 1`] = `
 "<p>this is not katex: $$a\\raisebox{0.25em}{$b$}c$</p>
 "
@@ -125,5 +130,10 @@ H400000v40H845.2724
 s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
 c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
 M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1266em;"><span></span></span></span></span></span></span></span></span></p>
+"
+`;
+
+exports[`marked-katex-extension slash $ 1`] = `
+"<p>this is inline katex: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">$</mi></mrow><annotation encoding="application/x-tex">\\$</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">$</span></span></span></span></p>
 "
 `;

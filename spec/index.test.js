@@ -1,9 +1,23 @@
 import { marked } from 'marked';
 import markedKatex from '../src/index.js';
+import { readFileSync } from 'node:fs';
+
+const specs = JSON.parse(readFileSync('./spec/specs.json')); // fix when cwd is not root
+
+function normalize(str) {
+  return str
+    .replace(/<(\w+)([^>]*)><\/\1>/g, '<$1$2/>')
+    .replace(/'|`|ˋ|ˊ|&quot;|&#x27;/g, '"')
+    .replace(/\s|&nbsp;/g, '')
+    .replace(/\\VERT|\\\|/ig, '|')
+    .replace('"=""', '"/')
+    .replace(/\\cr/g, '\\\\');
+}
 
 describe('marked-katex-extension', () => {
   beforeEach(() => {
     marked.setOptions(marked.getDefaults());
+    marked.setOptions({ mangle: false, headerIds: false });
   });
 
   const snapshots = {
@@ -50,7 +64,15 @@ $$
 `,
     'inline katex with $ inside': 'this is inline katex: $a\\raisebox{0.25em}{$b$}c$',
     'inline katex $$...$': 'this is not katex: $$a\\raisebox{0.25em}{$b$}c$',
-    'inline katex $...$$': 'this is not katex: $a\\raisebox{0.25em}{$b$}c$$'
+    'inline katex $...$$': 'this is not katex: $a\\raisebox{0.25em}{$b$}c$$',
+    'slash $': 'this is inline katex: $\\$$',
+    'block slash $': `
+this is block katex:
+
+$$
+\\$\\$
+$$
+`
   };
 
   for (const name in snapshots) {
@@ -60,4 +82,20 @@ $$
       expect(marked(md)).toMatchSnapshot();
     });
   }
+
+  describe('specs', () => {
+    const hasOnly = specs.some(s => s.only);
+    for (const s of specs) {
+      if (hasOnly && !s.only) {
+        continue;
+      }
+      (s.only ? test.only : test)(s.name, () => {
+        marked.use(markedKatex(s.options));
+        const multiline = s.source.includes('\n');
+        const md = multiline ? `$$\n${s.source}\n$$` : `$${s.source}$`;
+        const expected = multiline ? s.rendered : `<p>${s.rendered}</p>\n`;
+        expect(normalize(marked(md))).toBe(normalize(expected));
+      });
+    }
+  });
 });
