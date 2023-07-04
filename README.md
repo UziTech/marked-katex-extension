@@ -44,8 +44,6 @@ marked.use(markedKatex(options));
 marked.parse("katex: $c = \\pm\\sqrt{a^2 + b^2}$");
 ```
 
-# Use `fleqn: true` in `options` to align block level katex output to the left
-
 ![image](https://user-images.githubusercontent.com/97994/188899567-e6e8268c-209e-4067-8f44-0ada16caacdd.png)
 
 ## `options`
