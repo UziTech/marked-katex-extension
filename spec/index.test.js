@@ -46,7 +46,7 @@ c = \\pm\\sqrt{a^2 + b^2}
 $$$
 `,
     'block katex 1 $': `
-This is not block level katex:
+This is block level katex:
 
 $
 c = \\pm\\sqrt{a^2 + b^2}
@@ -89,7 +89,7 @@ $$
       if (hasOnly && !s.only) {
         continue;
       }
-      (s.only ? test.only : (s.skip ? test.skip : test))(s.name, () => {
+      (s.only ? test.only : (s.skip ? test.skip : test))(`Specs: ${s.name}`, () => {
         marked.use(markedKatex(s.options));
         const multiline = s.source.includes('\n');
         const md = multiline ? `$$\n${s.source}\n$$` : `$${s.source}$`;

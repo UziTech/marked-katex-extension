@@ -2,7 +2,7 @@ import katex from 'katex';
 
 const inlineStartRule = /(?<=\s|^)\${1,2}(?!\$)/;
 const inlineRule = /^(\${1,2})(?!\$)((?:\\.|[^\\\n])+?)(?<![^\\]\$)\1(?=\s|$)/;
-const blockRule = /^\$\$\n((?:\\[^]|[^\\])+?)\n\$\$(?:\n|$)/;
+const blockRule = /^(\${1,2})\n((?:\\[^]|[^\\])+?)\n\1(?:\n|$)/;
 
 export default function(options = {}) {
   return {
@@ -52,15 +52,15 @@ function blockKatex(options, renderer) {
   return {
     name: 'blockKatex',
     level: 'block',
-    start(src) { return src.indexOf('\n$$'); },
+    start(src) { return src.indexOf('\n$'); },
     tokenizer(src, tokens) {
       const match = src.match(blockRule);
       if (match) {
         return {
           type: 'blockKatex',
           raw: match[0],
-          text: match[1].trim(),
-          displayMode: true
+          text: match[2].trim(),
+          displayMode: match[1].length === 2
         };
       }
     },
