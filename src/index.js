@@ -25,7 +25,7 @@ function inlineKatex(options) {
       }
     },
     renderer(token) {
-      console.log('inline');
+      // console.log('inline');
       return katex.renderToString(token.text, options);
     }
   };
@@ -48,7 +48,7 @@ function blockKatex(options) {
       }
     },
     renderer(token) {
-      console.log('block');
+      // console.log('block');
       return `${katex.renderToString(token.text, { ...options, displayMode: true })}`;
     }
   };
