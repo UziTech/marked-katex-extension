@@ -72,6 +72,11 @@ this is block katex:
 $$
 \\$\\$
 $$
+`,
+    'inline katex with newline': `
+this is not katex: $
+c = \\pm\\sqrt{a^2 + b^2}
+$
 `
   };
 

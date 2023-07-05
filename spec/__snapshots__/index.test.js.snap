@@ -110,6 +110,13 @@ exports[`marked-katex-extension inline katex with $ inside 1`] = `
 "
 `;
 
+exports[`marked-katex-extension inline katex with newline 1`] = `
+"<p>this is not katex: $
+c = \\pm\\sqrt{a^2 + b^2}
+$</p>
+"
+`;
+
 exports[`marked-katex-extension not katex 1`] = `
 "<p>not katex $300 $400</p>
 "
