@@ -77,6 +77,38 @@ $$
 this is not katex: $
 c = \\pm\\sqrt{a^2 + b^2}
 $
+`,
+    'multiple inline katex $': `
+this is katex: **pi:** $\\pi$ **theta:** $\\theta$
+`,
+    'multiple inline katex $$': `
+this is katex: **pi:** $$\\pi$$ **theta:** $$\\theta$$
+`,
+    'multiple block katex $': `
+# pi:
+
+$
+\\pi
+$
+
+# theta:
+
+$
+\\theta
+$
+`,
+    'multiple block katex $$': `
+# pi:
+
+$$
+\\pi
+$$
+
+# theta:
+
+$$
+\\theta
+$$
 `
   };
 
