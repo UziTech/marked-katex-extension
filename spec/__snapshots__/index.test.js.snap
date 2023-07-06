@@ -179,6 +179,6 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">â€
 `;
 
 exports[`marked-katex-extension slash $ 1`] = `
-"<p>this is inline katex: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">$</mi></mrow><annotation encoding="application/x-tex">\\$</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">$</span></span></span></span></p>
+"<p>must include space between katex and end delimiter: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">$</mi></mrow><annotation encoding="application/x-tex">\\$</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">$</span></span></span></span></p>
 "
 `;
