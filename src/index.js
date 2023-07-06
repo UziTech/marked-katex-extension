@@ -7,14 +7,14 @@ const blockRule = /^(\${1,2})\n((?:\\[^]|[^\\])+?)\n\1(?:\n|$)/;
 export default function(options = {}) {
   return {
     extensions: [
-      inlineKatex(options, createRenderer(options)),
-      blockKatex(options, createRenderer(options))
+      inlineKatex(options, createRenderer(options, false)),
+      blockKatex(options, createRenderer(options, true))
     ]
   };
 }
 
-function createRenderer(options) {
-  return (token) => katex.renderToString(token.text, { displayMode: token.displayMode, ...options });
+function createRenderer(options, newlineAfter) {
+  return (token) => katex.renderToString(token.text, { displayMode: token.displayMode, ...options }) + (newlineAfter ? '\n' : '');
 }
 
 function inlineKatex(options, renderer) {
