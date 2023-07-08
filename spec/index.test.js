@@ -128,8 +128,9 @@ $$
       }
       (s.only ? test.only : (s.skip ? test.skip : test))(`Specs: ${s.name}`, () => {
         marked.use(markedKatex(s.options));
+        const delimiter = s.options.displayMode ? '$$' : '$';
         const multiline = s.source.includes('\n');
-        const md = multiline ? `$$\n${s.source}\n$$` : `$ ${s.source} $`;
+        const md = multiline ? `${delimiter}\n${s.source}\n${delimiter}` : `${delimiter} ${s.source} ${delimiter}`;
         const expected = multiline ? s.rendered : `<p>${s.rendered}</p>\n`;
         expect(normalize(marked(md))).toBe(normalize(expected));
       });
