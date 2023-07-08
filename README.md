@@ -2,8 +2,6 @@
 
 Render [katex](https://katex.org/) code in marked
 
-Note: Block level katex requires at least 2 `$` at the beginning and end.
-
 ```markdown
 This is inline katex: $c = \\pm\\sqrt{a^2 + b^2}$
 

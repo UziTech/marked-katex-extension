@@ -14,7 +14,7 @@ export default function(options = {}) {
 }
 
 function createRenderer(options, newlineAfter) {
-  return (token) => katex.renderToString(token.text, { displayMode: token.displayMode, ...options }) + (newlineAfter ? '\n' : '');
+  return (token) => katex.renderToString(token.text, { ...options, displayMode: token.displayMode }) + (newlineAfter ? '\n' : '');
 }
 
 function inlineKatex(options, renderer) {
