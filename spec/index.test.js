@@ -63,6 +63,7 @@ a$}
 $$
 `,
     'inline katex with $ inside': 'this is inline katex: $a\\raisebox{0.25em}{$b$}c$',
+    'inline katex with puncuation after': 'this is inline katex: $x$, $O(log(n))$.',
     'inline katex $$...$': 'this is not katex: $$a\\raisebox{0.25em}{$b$}c$',
     'inline katex $...$$': 'this is not katex: $a\\raisebox{0.25em}{$b$}c$$',
     'slash $': 'must include space between katex and end delimiter: $ \\$ $',
