@@ -63,7 +63,11 @@ a$}
 $$
 `,
     'inline katex with $ inside': 'this is inline katex: $a\\raisebox{0.25em}{$b$}c$',
-    'inline katex with puncuation after': 'this is inline katex: $x$, $O(log(n))$.',
+    'inline katex with a question mark after': 'this is inline katex: $x$?',
+    'inline katex with an exclamation mark after': 'this is inline katex: $x$!',
+    'inline katex with a period after': 'this is inline katex: $x$.',
+    'inline katex with a comma after': 'this is inline katex: $x$,',
+    'inline katex with a colon after': 'this is inline katex: $x$:',
     'inline katex $$...$': 'this is not katex: $$a\\raisebox{0.25em}{$b$}c$',
     'inline katex $...$$': 'this is not katex: $a\\raisebox{0.25em}{$b$}c$$',
     'slash $': 'must include space between katex and end delimiter: $ \\$ $',
