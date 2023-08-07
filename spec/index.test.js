@@ -17,7 +17,6 @@ function normalize(str) {
 describe('marked-katex-extension', () => {
   beforeEach(() => {
     marked.setOptions(marked.getDefaults());
-    marked.setOptions({ mangle: false, headerIds: false });
   });
 
   const snapshots = {
