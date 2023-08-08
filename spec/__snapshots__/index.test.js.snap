@@ -114,6 +114,31 @@ exports[`marked-katex-extension inline katex with $ inside 1`] = `
 "
 `;
 
+exports[`marked-katex-extension inline katex with a colon after 1`] = `
+"<p>this is inline katex: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>:</p>
+"
+`;
+
+exports[`marked-katex-extension inline katex with a comma after 1`] = `
+"<p>this is inline katex: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>,</p>
+"
+`;
+
+exports[`marked-katex-extension inline katex with a period after 1`] = `
+"<p>this is inline katex: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>.</p>
+"
+`;
+
+exports[`marked-katex-extension inline katex with a question mark after 1`] = `
+"<p>this is inline katex: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>?</p>
+"
+`;
+
+exports[`marked-katex-extension inline katex with an exclamation mark after 1`] = `
+"<p>this is inline katex: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>!</p>
+"
+`;
+
 exports[`marked-katex-extension inline katex with newline 1`] = `
 "<p>this is not katex: $
 c = \\pm\\sqrt{a^2 + b^2}
