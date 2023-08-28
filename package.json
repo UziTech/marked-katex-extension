@@ -63,7 +63,7 @@
     "jest-cli": "^29.6.4",
     "marked": "^7.0.4",
     "node-fetch": "^3.3.2",
-    "rollup": "^3.28.0",
+    "rollup": "^3.28.1",
     "semantic-release": "^21.1.1",
     "tsd": "^0.28.1"
   },
