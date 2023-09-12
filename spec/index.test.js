@@ -70,6 +70,7 @@ $$
     'inline katex $$...$': 'this is not katex: $$a\\raisebox{0.25em}{$b$}c$',
     'inline katex $...$$': 'this is not katex: $a\\raisebox{0.25em}{$b$}c$$',
     'slash $': 'must include space between katex and end delimiter: $ \\$ $',
+    'slash $ without spaces': 'no need to include space between katex and end delimiter anymore: $\\$$',
     'block slash $': `
 this is block katex:
 
