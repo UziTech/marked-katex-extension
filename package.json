@@ -53,7 +53,7 @@
     "@semantic-release/github": "^9.0.5",
     "@semantic-release/npm": "^10.0.5",
     "@semantic-release/release-notes-generator": "^11.0.7",
-    "babel-jest": "^29.6.4",
+    "babel-jest": "^29.7.0",
     "cheerio": "^1.0.0-rc.12",
     "eslint": "^8.49.0",
     "eslint-config-standard": "^17.1.0",
