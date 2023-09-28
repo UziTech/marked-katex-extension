@@ -53,7 +53,6 @@ function blockKatex(options, renderer) {
   return {
     name: 'blockKatex',
     level: 'block',
-    start(src) { return src.indexOf('\n$'); },
     tokenizer(src, tokens) {
       const match = src.match(blockRule);
       if (match) {

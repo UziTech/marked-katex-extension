@@ -114,6 +114,20 @@ $$
 $$
 \\theta
 $$
+`,
+    '$ in code fence not katex': `
+text on line before it
+\`\`\`
+$ cat README
+Hello World!
+\`\`\`
+`,
+    'does not break paragraph': `
+text on line before it
+$$
+This is not katex since there is no blank line above it.
+It is part of the previous paragraph.
+$$
 `
   };
 
