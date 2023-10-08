@@ -23,7 +23,7 @@
     }
   },
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose && node --test spec/marked-tests.js",
     "test:cover": "jest --coverage",
     "test:types": "tsd -f spec/index.test-d.ts -t src/index.d.ts",
     "lint": "eslint .",
@@ -46,6 +46,7 @@
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.22.20",
+    "@markedjs/testutils": "9.1.0-3",
     "@rollup/plugin-node-resolve": "^15.2.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^11.0.0",
