@@ -36,7 +36,7 @@ jobs:
       - name: Run Tests 👩🏽‍💻
         run: npm run test:spec
 
-  Coverage:
+  TestCoverage:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -94,7 +94,7 @@ jobs:
         run: npm run build
 
   Release:
-    needs: [TestKatex, TestMarked, Coverage, TestTypes, Lint, Build]
+    needs: [TestKatex, TestMarked, TestCoverage, TestTypes, Lint, Build]
     if: |
       github.ref == 'refs/heads/main' &&
       github.event.repository.fork == false
