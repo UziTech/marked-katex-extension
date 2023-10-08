@@ -23,7 +23,9 @@
     }
   },
   "scripts": {
-    "test": "jest --verbose && node --test spec/marked-tests.js",
+    "test": "npm run build && npm run test:cover && npm run test:spec && npm run test:types && npm run lint",
+    "test:katex": "jest --verbose",
+    "test:spec": "node --test spec/marked-tests.js",
     "test:cover": "jest --coverage",
     "test:types": "tsd -f spec/index.test-d.ts -t src/index.d.ts",
     "lint": "eslint .",
