@@ -105,3 +105,6 @@ dist
 
 # build directory
 lib/
+
+# ignore vscode settings
+.vscode
