@@ -46,7 +46,7 @@
     "marked": ">=4 <10"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.0",
+    "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.22.20",
     "@markedjs/testutils": "9.1.0-3",
     "@rollup/plugin-node-resolve": "^15.2.3",
