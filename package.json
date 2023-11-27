@@ -71,7 +71,7 @@
     "tsd": "^0.29.0"
   },
   "dependencies": {
-    "@types/katex": "^0.16.6",
+    "@types/katex": "^0.16.7",
     "katex": "^0.16.9"
   }
 }
