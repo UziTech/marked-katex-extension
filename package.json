@@ -68,7 +68,7 @@
     "node-fetch": "^3.3.2",
     "rollup": "^4.8.0",
     "semantic-release": "^22.0.10",
-    "tsd": "^0.29.0"
+    "tsd": "^0.30.0"
   },
   "dependencies": {
     "@types/katex": "^0.16.7",
