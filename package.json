@@ -1,6 +1,6 @@
 {
   "name": "marked-katex-extension",
-  "version": "4.0.5",
+  "version": "5.0.0",
   "description": "MarkedJS extesion to render katex",
   "main": "./lib/index.cjs",
   "module": "./src/index.js",
