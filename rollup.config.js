@@ -8,11 +8,12 @@ export default [
       file: 'lib/index.umd.js',
       format: 'umd',
       globals: {
-        marked: 'marked'
+        marked: 'marked',
+        katex: 'katex'
       }
     },
     plugins: [nodeResolve()],
-    external: ['marked']
+    external: ['marked', 'katex']
   },
   {
     input: 'src/index.js',
