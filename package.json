@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/UziTech/marked-katex-extension#readme",
   "peerDependencies": {
-    "marked": ">=4 <12",
+    "marked": ">=4 <13",
     "katex": ">=0.16 <0.17"
   },
   "devDependencies": {
