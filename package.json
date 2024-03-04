@@ -47,7 +47,7 @@
     "katex": ">=0.16 <0.17"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
+    "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.23.9",
     "@markedjs/testutils": "11.0.0-0",
     "@rollup/plugin-node-resolve": "^15.2.3",
