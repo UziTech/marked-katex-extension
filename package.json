@@ -65,7 +65,7 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "jest-cli": "^29.7.0",
-    "katex": "^0.16.9",
+    "katex": "^0.16.10",
     "marked": "^12.0.1",
     "node-fetch": "^3.3.2",
     "rollup": "^4.13.0",
