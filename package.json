@@ -69,7 +69,7 @@
     "marked": "^12.0.1",
     "node-fetch": "^3.3.2",
     "rollup": "^4.14.1",
-    "semantic-release": "^23.0.7",
+    "semantic-release": "^23.0.8",
     "tsd": "^0.31.0"
   },
   "dependencies": {
