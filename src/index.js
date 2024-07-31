@@ -1,6 +1,8 @@
 import katex from 'katex';
 
 const inlineRule = /^(\${1,2})(?!\$)((?:\\.|[^\\\n])*?(?:\\.|[^\\\n\$]))\1(?=[\s?!\.,:？！。，：]|$)/;
+const inlineRuleNonStandard = /^(\${1,2})(?!\$)((?:\\.|[^\\\n])*?(?:\\.|[^\\\n\$]))\1/; // Non-standard, even if there are no spaces before and after $ or $$, try to parse
+
 const blockRule = /^(\${1,2})\n((?:\\[^]|[^\\])+?)\n\1(?:\n|$)/;
 
 export default function(options = {}) {
@@ -17,6 +19,8 @@ function createRenderer(options, newlineAfter) {
 }
 
 function inlineKatex(options, renderer) {
+  const { nonStandard } = options;
+  const ruleReg = nonStandard ? inlineRuleNonStandard : inlineRule;
   return {
     name: 'inlineKatex',
     level: 'inline',
@@ -29,11 +33,11 @@ function inlineKatex(options, renderer) {
         if (index === -1) {
           return;
         }
-
-        if (index === 0 || indexSrc.charAt(index - 1) === ' ') {
+        const f = nonStandard ? index > -1 : index === 0 || indexSrc.charAt(index - 1) === ' '
+        if (f) {
           const possibleKatex = indexSrc.substring(index);
 
-          if (possibleKatex.match(inlineRule)) {
+          if (possibleKatex.match(ruleReg)) {
             return index;
           }
         }
@@ -42,7 +46,7 @@ function inlineKatex(options, renderer) {
       }
     },
     tokenizer(src, tokens) {
-      const match = src.match(inlineRule);
+      const match = src.match(ruleReg);
       if (match) {
         return {
           type: 'inlineKatex',
