@@ -5,7 +5,7 @@ const inlineRuleNonStandard = /^(\${1,2})(?!\$)((?:\\.|[^\\\n])*?(?:\\.|[^\\\n\$
 
 const blockRule = /^(\${1,2})\n((?:\\[^]|[^\\])+?)\n\1(?:\n|$)/;
 
-export default function (options = {}) {
+export default function(options = {}) {
   return {
     extensions: [
       inlineKatex(options, createRenderer(options, false)),
@@ -33,7 +33,7 @@ function inlineKatex(options, renderer) {
         if (index === -1) {
           return;
         }
-        const f = nonStandard ? index > -1 : index === 0 || indexSrc.charAt(index - 1) === ' '
+        const f = nonStandard ? index > -1 : index === 0 || indexSrc.charAt(index - 1) === ' ';
         if (f) {
           const possibleKatex = indexSrc.substring(index);
 
