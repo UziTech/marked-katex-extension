@@ -131,6 +131,26 @@ $$
 `
   };
 
+  const nonStandardSnapshots = {
+    'non standard readme example': `
+afdaf$x=x^2$4$x=x^2$
+
+$$
+x = x^2
+$$
+`,
+    'without space before $ ': 'katex$c = \\pm\\sqrt{a^2 + b^2}$'
+  };
+
+  for (const name in nonStandardSnapshots) {
+    test(name, () => {
+      marked.use(markedKatex({
+        nonStandard: true
+      }));
+      const md = nonStandardSnapshots[name];
+      expect(marked(md)).toMatchSnapshot();
+    });
+  }
   for (const name in snapshots) {
     test(name, () => {
       marked.use(markedKatex());
