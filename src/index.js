@@ -9,8 +9,8 @@ export default function(options = {}) {
   return {
     extensions: [
       inlineKatex(options, createRenderer(options, false)),
-      blockKatex(options, createRenderer(options, true))
-    ]
+      blockKatex(options, createRenderer(options, true)),
+    ],
   };
 }
 
@@ -52,11 +52,11 @@ function inlineKatex(options, renderer) {
           type: 'inlineKatex',
           raw: match[0],
           text: match[2].trim(),
-          displayMode: match[1].length === 2
+          displayMode: match[1].length === 2,
         };
       }
     },
-    renderer
+    renderer,
   };
 }
 
@@ -71,10 +71,10 @@ function blockKatex(options, renderer) {
           type: 'blockKatex',
           raw: match[0],
           text: match[2].trim(),
-          displayMode: match[1].length === 2
+          displayMode: match[1].length === 2,
         };
       }
     },
-    renderer
+    renderer,
   };
 }

@@ -128,7 +128,7 @@ $$
 This is not katex since there is no blank line above it.
 It is part of the previous paragraph.
 $$
-`
+`,
   };
 
   const nonStandardSnapshots = {

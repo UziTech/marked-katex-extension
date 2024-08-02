@@ -28,7 +28,7 @@
     "test:spec": "node --test spec/marked-tests.js",
     "test:cover": "jest --coverage",
     "test:types": "tsd -f spec/index.test-d.ts -t src/index.d.ts",
-    "lint": "eslint .",
+    "lint": "eslint",
     "build": "rollup -c rollup.config.js",
     "update-specs": "node ./update-specs.js"
   },
@@ -43,12 +43,13 @@
   },
   "homepage": "https://github.com/UziTech/marked-katex-extension#readme",
   "peerDependencies": {
-    "marked": ">=4 <14",
-    "katex": ">=0.16 <0.17"
+    "katex": ">=0.16 <0.17",
+    "marked": ">=4 <14"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@babel/preset-env": "^7.25.0",
+    "@markedjs/eslint-config": "^1.0.0",
     "@markedjs/testutils": "13.0.0-0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@semantic-release/changelog": "^6.0.3",
@@ -59,11 +60,7 @@
     "@semantic-release/release-notes-generator": "^14.0.1",
     "babel-jest": "^29.7.0",
     "cheerio": "^1.0.0-rc.12",
-    "eslint": "^8.57.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.6.0",
+    "globals": "^15.9.0",
     "jest-cli": "^29.7.0",
     "katex": "^0.16.11",
     "marked": "^13.0.3",
