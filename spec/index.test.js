@@ -128,7 +128,7 @@ $$
 This is not katex since there is no blank line above it.
 It is part of the previous paragraph.
 $$
-`
+`,
   };
 
   const nonStandardSnapshots = {
@@ -139,13 +139,13 @@ $$
 x = x^2
 $$
 `,
-    'without space before $ ': 'katex$c = \\pm\\sqrt{a^2 + b^2}$'
+    'without space before $ ': 'katex$c = \\pm\\sqrt{a^2 + b^2}$',
   };
 
   for (const name in nonStandardSnapshots) {
     test(name, () => {
       marked.use(markedKatex({
-        nonStandard: true
+        nonStandard: true,
       }));
       const md = nonStandardSnapshots[name];
       expect(marked(md)).toMatchSnapshot();

@@ -24,7 +24,7 @@ const commentsInSource = [
   'KaTeX supports A-Z & k',
   'KaTeX supports A-Z',
   ' supports A-Z & k',
-  ' Must enable trust and disable strict option'
+  ' Must enable trust and disable strict option',
 ];
 // const specsToIgnore = [
 //   '\\url',
@@ -51,7 +51,7 @@ async function updateSpecs() {
   const specsFile = resolve('./spec/specs.json');
   try {
     unlinkSync(specsFile);
-  } catch (ex) {
+  } catch {
     // no file exists
   }
   try {
@@ -96,8 +96,8 @@ async function updateSpecs() {
           options: {
             displayMode: !!rendered?.includes('katex-display'),
             trust,
-            strict
-          }
+            strict,
+          },
         };
 
         let result;

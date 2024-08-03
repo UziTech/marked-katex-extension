@@ -9,18 +9,18 @@ export default [
       format: 'umd',
       globals: {
         marked: 'marked',
-        katex: 'katex'
-      }
+        katex: 'katex',
+      },
     },
     plugins: [nodeResolve()],
-    external: ['marked', 'katex']
+    external: ['marked', 'katex'],
   },
   {
     input: 'src/index.js',
     output: {
       file: 'lib/index.cjs',
-      format: 'cjs'
+      format: 'cjs',
     },
-    external: ['marked', 'katex']
-  }
+    external: ['marked', 'katex'],
+  },
 ];
