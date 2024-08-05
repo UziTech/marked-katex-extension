@@ -49,7 +49,7 @@
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@babel/preset-env": "^7.25.3",
-    "@markedjs/eslint-config": "^1.0.0",
+    "@markedjs/eslint-config": "^1.0.1",
     "@markedjs/testutils": "13.0.0-0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@semantic-release/changelog": "^6.0.3",
