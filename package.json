@@ -44,7 +44,7 @@
   "homepage": "https://github.com/UziTech/marked-katex-extension#readme",
   "peerDependencies": {
     "katex": ">=0.16 <0.17",
-    "marked": ">=4 <14"
+    "marked": ">=4 <15"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -63,7 +63,7 @@
     "globals": "^15.9.0",
     "jest-cli": "^29.7.0",
     "katex": "^0.16.11",
-    "marked": "^13.0.3",
+    "marked": "^14.0.0",
     "node-fetch": "^3.3.2",
     "rollup": "^4.20.0",
     "semantic-release": "^24.0.0",
