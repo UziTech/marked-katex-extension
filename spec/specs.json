@@ -272,23 +272,21 @@
   },
   {
     "name": "\\{",
-    "rendered": "${$",
+    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">{</mo></mrow><annotation encoding=\"application/x-tex\">\\{</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">{</span></span></span></span>",
     "source": "\\{",
     "options": {
       "displayMode": false,
       "trust": false
-    },
-    "skip": true
+    }
   },
   {
     "name": "\\}",
-    "rendered": "$}$",
+    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">}</mo></mrow><annotation encoding=\"application/x-tex\">\\}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mclose\">}</span></span></span></span>",
     "source": "\\}",
     "options": {
       "displayMode": false,
       "trust": false
-    },
-    "skip": true
+    }
   },
   {
     "name": "|",
@@ -2220,6 +2218,24 @@
     }
   },
   {
+    "name": "\\ddddot",
+    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi><mover><mo><mi>x</mi></mo><mpadded voffset=\"-0.1ex\"><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mstyle mathsize=\"1em\"><mtext>....</mtext></mstyle></mstyle></mpadded></mover></mi></mrow><annotation encoding=\"application/x-tex\">\\ddddot x</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.793em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mop op-limits\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.793em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span><span class=\"mop mathnormal\">x</span></span></span><span style=\"top:-3.6306em;margin-left:0em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.0892em;\"><span style=\"top:-2.9384em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord sizing reset-size3 size6\"><span class=\"mord\">....</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.0616em;\"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>",
+    "source": "\\ddddot x",
+    "options": {
+      "displayMode": false,
+      "trust": false
+    }
+  },
+  {
+    "name": "\\dddot",
+    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi><mover><mo><mi>x</mi></mo><mpadded voffset=\"-0.1ex\"><mstyle scriptlevel=\"0\" displaystyle=\"false\"><mstyle mathsize=\"1em\"><mtext>...</mtext></mstyle></mstyle></mpadded></mover></mi></mrow><annotation encoding=\"application/x-tex\">\\dddot x</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.793em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mop op-limits\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.793em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span><span class=\"mop mathnormal\">x</span></span></span><span style=\"top:-3.6306em;margin-left:0em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.0892em;\"><span style=\"top:-2.9384em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord sizing reset-size3 size6\"><span class=\"mord\">...</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.0616em;\"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>",
+    "source": "\\dddot x",
+    "options": {
+      "displayMode": false,
+      "trust": false
+    }
+  },
+  {
     "name": "\\ddot",
     "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mover accent=\"true\"><mi>x</mi><mo>¨</mo></mover></mrow><annotation encoding=\"application/x-tex\">\\ddot x</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6679em;\"></span><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6679em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\">x</span></span><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.2222em;\"><span class=\"mord\">¨</span></span></span></span></span></span></span></span></span></span>",
     "source": "\\ddot x",
@@ -2593,6 +2609,15 @@
     "name": "\\ell",
     "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">ℓ</mi></mrow><annotation encoding=\"application/x-tex\">\\ell</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6944em;\"></span><span class=\"mord\">ℓ</span></span></span></span>",
     "source": "\\ell",
+    "options": {
+      "displayMode": false,
+      "trust": false
+    }
+  },
+  {
+    "name": "\\emph",
+    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext mathvariant=\"italic\">nested</mtext><mtext>&nbsp;emphasis</mtext></mrow><annotation encoding=\"application/x-tex\">\\emph{nested \\emph{emphasis}}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8889em;vertical-align:-0.1944em;\"></span><span class=\"mord text\"><span class=\"mord textit\">nested&nbsp;</span><span class=\"mord text\"><span class=\"mord textup\">emphasis</span></span></span></span></span></span>",
+    "source": "\\emph{nested \\emph{emphasis}}",
     "options": {
       "displayMode": false,
       "trust": false
@@ -3533,7 +3558,7 @@
   },
   {
     "name": "\\includegraphics",
-    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mglyph alt=\"KA logo\" valign=\"-0.1em\" height=\"0.9em\" width=\"0.9em\" src=\"https://cdn.kastatic.org/images/apple-touch-icon-57x57-precomposed.new.png\"></mglyph></mrow><annotation encoding=\"application/x-tex\">\\includegraphics[height=0.8em, totalheight=0.9em, width=0.9em, alt=KA logo]{https://cdn.kastatic.org/images/apple-touch-icon-57x57-precomposed.new.png}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.9em;vertical-align:-0.1em;\"></span><img src=\"https://cdn.kastatic.org/images/apple-touch-icon-57x57-precomposed.new.png \" alt=\"KA logo\" style=\"height:0.9em;width:0.9em;vertical-align:-0.1em;\" '=\"\"></span></span></span>",
+    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mglyph alt=\"KA logo\" valign=\"-0.1em\" height=\"0.9em\" width=\"0.9em\" src=\"https://cdn.kastatic.org/images/apple-touch-icon-57x57-precomposed.new.png\"></mglyph></mrow><annotation encoding=\"application/x-tex\">\\includegraphics[height=0.8em, totalheight=0.9em, width=0.9em, alt=KA logo]{https://cdn.kastatic.org/images/apple-touch-icon-57x57-precomposed.new.png}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.9em;vertical-align:-0.1em;\"></span><img src=\"https://cdn.kastatic.org/images/apple-touch-icon-57x57-precomposed.new.png\" alt=\"KA logo\" style=\"height:0.9em;width:0.9em;vertical-align:-0.1em;\" '=\"\"></span></span></span>",
     "source": "\\includegraphics[height=0.8em, totalheight=0.9em, width=0.9em, alt=KA logo]{https://cdn.kastatic.org/images/apple-touch-icon-57x57-precomposed.new.png}",
     "options": {
       "displayMode": false,
@@ -8537,7 +8562,7 @@
   },
   {
     "name": "\\vdots",
-    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi><mi mathvariant=\"normal\">⋮</mi><mpadded height=\"0em\" voffset=\"0em\"><mspace mathbackground=\"black\" width=\"0em\" height=\"1.5em\"></mspace></mpadded></mi></mrow><annotation encoding=\"application/x-tex\">\\vdots</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1.53em;vertical-align:-0.03em;\"></span><span class=\"mord\"><span class=\"mord\">⋮</span><span class=\"mord rule\" style=\"border-right-width:0em;border-top-width:1.5em;bottom:0em;\"></span></span></span></span></span>",
+    "rendered": "<span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">⋮</mi><mpadded height=\"0em\" voffset=\"0em\"><mspace mathbackground=\"black\" width=\"0em\" height=\"1.5em\"></mspace></mpadded></mrow><annotation encoding=\"application/x-tex\">\\vdots</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1.53em;vertical-align:-0.03em;\"></span><span class=\"mord\"><span class=\"mord\">⋮</span><span class=\"mord rule\" style=\"border-right-width:0em;border-top-width:1.5em;bottom:0em;\"></span></span></span></span></span>",
     "source": "\\vdots",
     "options": {
       "displayMode": false,
