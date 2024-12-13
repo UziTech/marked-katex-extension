@@ -25,8 +25,8 @@ import {marked} from "marked";
 import markedKatex from "marked-katex-extension";
 
 // or in the browser
-// <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@{version}/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
-// <script defer src="https://cdn.jsdelivr.net/npm/katex@{version}/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+// <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@{version}/dist/katex.min.css" crossorigin="anonymous">
+// <script src="https://cdn.jsdelivr.net/npm/katex@{version}/dist/katex.min.js" crossorigin="anonymous"></script>
 // <script src="https://cdn.jsdelivr.net/npm/marked@{version}/lib/marked.umd.js"></script>
 // <script src="https://cdn.jsdelivr.net/npm/marked-katex-extension@{version}/lib/index.umd.js"></script>
 
