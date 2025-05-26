@@ -66,7 +66,7 @@
     "marked": "^15.0.12",
     "node-fetch": "^3.3.2",
     "rollup": "^4.41.1",
-    "semantic-release": "^24.2.4",
+    "semantic-release": "^24.2.5",
     "tsd": "^0.32.0"
   },
   "tsd": {
