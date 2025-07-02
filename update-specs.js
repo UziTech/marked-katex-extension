@@ -115,7 +115,7 @@ async function updateSpecs() {
     });
     writeFileSync(specsFile, JSON.stringify(specs, null, 2).replace(/\u00a0+/g, '\\n') + '\n');
     console.log('Saved specs.');
-  } catch (ex) {
+  } catch(ex) {
     console.log(ex);
   }
 }
