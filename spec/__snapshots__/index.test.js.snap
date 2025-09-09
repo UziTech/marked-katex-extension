@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`marked-katex-extension $ in code fence not katex 1`] = `
 "<p>text on line before it</p>
