@@ -65,7 +65,7 @@
     "katex": "^0.16.22",
     "marked": "^16.3.0",
     "node-fetch": "^3.3.2",
-    "rollup": "^4.52.3",
+    "rollup": "^4.52.4",
     "semantic-release": "^24.2.9",
     "tsd": "^0.33.0"
   },
