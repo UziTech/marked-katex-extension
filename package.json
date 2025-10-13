@@ -51,7 +51,7 @@
     "@babel/preset-env": "^7.28.3",
     "@markedjs/eslint-config": "^1.0.13",
     "@markedjs/testutils": "16.2.0-0",
-    "@rollup/plugin-node-resolve": "^16.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
