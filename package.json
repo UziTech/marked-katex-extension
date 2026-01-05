@@ -50,7 +50,7 @@
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
     "@markedjs/eslint-config": "^1.0.14",
-    "@markedjs/testutils": "17.0.1-0",
+    "@markedjs/testutils": "17.0.1-2",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
