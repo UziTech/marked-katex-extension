@@ -5,9 +5,11 @@ on:
     branches:
       - main
 
-jobs:
+permissions:
+  contents: read
 
-  TestKatex:
+jobs:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -15,12 +17,12 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: '*'
+          node-version: "*"
           check-latest: true
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests 👩🏽‍💻
-        run: npm run test:katex
+        run: npm run test
 
   TestMarked:
     runs-on: ubuntu-latest
@@ -30,13 +32,13 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests 👩🏽‍💻
         run: npm run test:spec
 
-  TestCoverage:
+  Types:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -44,26 +46,25 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
-          check-latest: true
-      - name: Install Dependencies
-        run: npm ci
-      - name: Run Tests 👩🏽‍💻
-        run: npm run test:cover
-
-  TestTypes:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v6
-      - name: Install Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests 👩🏽‍💻
         run: npm run test:types
+
+  Coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+      - name: Install Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "lts/*"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests 👩🏽‍💻
+        run: npm run test:cover
 
   Lint:
     runs-on: ubuntu-latest
@@ -73,7 +74,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
       - name: Install Dependencies
         run: npm ci
       - name: Lint ✨
@@ -87,14 +88,19 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
       - name: Install Dependencies
         run: npm ci
-      - name: Build 🛠️
+      - name: Build 🗜️
         run: npm run build
 
   Release:
-    needs: [TestKatex, TestMarked, TestCoverage, TestTypes, Lint, Build]
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for trusted publishing and npm provenance
+    needs: [Test, TestMarked, Types, Coverage, Lint, Build]
     if: |
       github.ref == 'refs/heads/main' &&
       github.event.repository.fork == false
@@ -105,7 +111,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
       - name: Install Dependencies
         run: npm ci
       - name: Build 🗜️
@@ -113,5 +119,4 @@ jobs:
       - name: Release 🎉
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
