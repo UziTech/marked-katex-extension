@@ -31,7 +31,7 @@
     "test:types": "tsd -f spec/index.test-d.ts -t src/index.d.ts",
     "lint": "eslint",
     "build": "rollup -c rollup.config.js",
-    "update-specs": "node ./update-specs.js"
+    "update-specs": "node ./update-specs.js && jest --updateSnapshot"
   },
   "repository": {
     "type": "git",
@@ -63,7 +63,7 @@
     "cheerio": "^1.2.0",
     "globals": "^17.4.0",
     "jest-cli": "^30.3.0",
-    "katex": "^0.16.40",
+    "katex": "^0.16.44",
     "marked": "^17.0.5",
     "node-fetch": "^3.3.2",
     "rollup": "^4.60.1",
