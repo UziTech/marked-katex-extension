@@ -61,7 +61,7 @@
     "@semantic-release/release-notes-generator": "^14.1.0",
     "babel-jest": "^30.3.0",
     "cheerio": "^1.2.0",
-    "globals": "^17.5.0",
+    "globals": "^17.6.0",
     "jest-cli": "^30.3.0",
     "katex": "^0.16.45",
     "marked": "^18.0.2",
