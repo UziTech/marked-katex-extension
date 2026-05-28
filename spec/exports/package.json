@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "marked-katex-extension": "file:../.."
+  },
+  "type": "commonjs"
+}
