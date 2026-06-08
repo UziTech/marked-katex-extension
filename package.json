@@ -66,7 +66,7 @@
     "globals": "^17.6.0",
     "jest-cli": "^30.4.2",
     "katex": "^0.17.0",
-    "marked": "^18.0.4",
+    "marked": "^18.0.5",
     "node-fetch": "^3.3.2",
     "rollup": "^4.61.1",
     "semantic-release": "^25.0.3",
