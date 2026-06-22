@@ -50,8 +50,8 @@
     "marked": ">=4 <19"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
-    "@babel/preset-env": "^7.29.7",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
     "@markedjs/eslint-config": "^1.0.14",
     "@markedjs/testutils": "18.0.0-1",
     "@rollup/plugin-node-resolve": "^16.0.3",
