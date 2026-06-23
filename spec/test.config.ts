@@ -8,7 +8,7 @@ run({
   coverage: process.argv.includes('--cover'),
   coverageExcludeGlobs: ['spec/*', 'lib/*'],
   lineCoverage: 100,
-  branchCoverage: 90,
+  branchCoverage: 100,
   functionCoverage: 100,
 })
   .on('test:fail', () => {
