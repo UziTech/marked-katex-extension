@@ -1,11 +1,23 @@
 import katex from 'katex';
+import type { KatexOptions } from 'katex';
+import type { MarkedExtension, TokenizerExtension, RendererExtension, Tokens } from 'marked';
+
+export interface MarkedKatexOptions extends KatexOptions {
+  nonStandard?: boolean
+}
+
+interface KatexToken extends Tokens.Generic {
+  type: 'inlineKatex' | 'blockKatex';
+  text: string;
+  displayMode: boolean;
+}
 
 const inlineRule = /^(\${1,2})(?!\$)((?:\\.|[^\\\n])*?(?:\\.|[^\\\n\$]))\1(?=[\s?!\.,:？！。，：]|$)/;
 const inlineRuleNonStandard = /^(\${1,2})(?!\$)((?:\\.|[^\\\n])*?(?:\\.|[^\\\n\$]))\1/; // Non-standard, even if there are no spaces before and after $ or $$, try to parse
 
 const blockRule = /^(\${1,2})\n((?:\\[^]|[^\\])+?)\n\1(?:\n|$)/;
 
-export default function(options = {}) {
+export default function markedKatex(options: MarkedKatexOptions = {}): MarkedExtension {
   return {
     extensions: [
       inlineKatex(options, createRenderer(options, false)),
@@ -14,17 +26,17 @@ export default function(options = {}) {
   };
 }
 
-function createRenderer(options, newlineAfter) {
-  return (token) => katex.renderToString(token.text, { ...options, displayMode: token.displayMode }) + (newlineAfter ? '\n' : '');
+function createRenderer(options: MarkedKatexOptions, newlineAfter: boolean) {
+  return (token: KatexToken) => katex.renderToString(token.text, { ...options, displayMode: token.displayMode }) + (newlineAfter ? '\n' : '');
 }
 
-function inlineKatex(options, renderer) {
+function inlineKatex(options: MarkedKatexOptions, renderer: (token: KatexToken) => string): TokenizerExtension & RendererExtension {
   const nonStandard = options && options.nonStandard;
   const ruleReg = nonStandard ? inlineRuleNonStandard : inlineRule;
   return {
     name: 'inlineKatex',
     level: 'inline',
-    start(src) {
+    start(src: string) {
       let index;
       let indexSrc = src;
 
@@ -45,7 +57,7 @@ function inlineKatex(options, renderer) {
         indexSrc = indexSrc.substring(index + 1).replace(/^\$+/, '');
       }
     },
-    tokenizer(src, tokens) {
+    tokenizer(src: string, _tokens: Tokens.Generic[]) {
       const match = src.match(ruleReg);
       if (match) {
         return {
@@ -56,15 +68,15 @@ function inlineKatex(options, renderer) {
         };
       }
     },
-    renderer,
+    renderer: renderer as (token: Tokens.Generic) => string,
   };
 }
 
-function blockKatex(options, renderer) {
+function blockKatex(options: MarkedKatexOptions, renderer: (token: KatexToken) => string): TokenizerExtension & RendererExtension {
   return {
     name: 'blockKatex',
     level: 'block',
-    tokenizer(src, tokens) {
+    tokenizer(src: string, _tokens: Tokens.Generic[]) {
       const match = src.match(blockRule);
       if (match) {
         return {
@@ -75,6 +87,6 @@ function blockKatex(options, renderer) {
         };
       }
     },
-    renderer,
+    renderer: renderer as (token: Tokens.Generic) => string,
   };
 }

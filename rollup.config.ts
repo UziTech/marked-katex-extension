@@ -1,8 +1,9 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 
 export default [
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       name: 'markedKatex',
       file: 'lib/index.umd.js',
@@ -12,15 +13,16 @@ export default [
         katex: 'katex',
       },
     },
-    plugins: [nodeResolve()],
+    plugins: [nodeResolve(), typescript()],
     external: ['marked', 'katex'],
   },
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: {
       file: 'lib/index.cjs',
       format: 'cjs',
     },
+    plugins: [typescript()],
     external: ['marked', 'katex'],
   },
 ];

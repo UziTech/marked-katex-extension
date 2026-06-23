@@ -1,12 +1,22 @@
 import { describe, test, beforeEach } from 'node:test';
 import assert from 'node:assert';
 import { marked } from 'marked';
-import markedKatex from '../src/index.js';
+import markedKatex, { type MarkedKatexOptions } from '../src/index.ts';
 import { readFileSync } from 'node:fs';
+import { resolve } from "node:path";
 
-const specs = JSON.parse(readFileSync('./spec/specs.json')); // fix when cwd is not root
+const specs = JSON.parse(readFileSync(resolve(import.meta.dirname, 'specs.json'), {encoding: 'utf-8'}));
 
-function normalize(str) {
+interface Spec {
+  name: string;
+  source: string;
+  options: MarkedKatexOptions;
+  rendered: string;
+  only?: boolean;
+  skip?: boolean;
+}
+
+function normalize(str: string) {
   return str
     .replace(/<(\w+)([^>]*)><\/\1>/g, '<$1$2/>')
     .replace(/'|`|ˋ|ˊ|&quot;|&#x27;/g, '"')
@@ -21,7 +31,7 @@ describe('marked-katex-extension', () => {
     marked.setOptions(marked.getDefaults());
   });
 
-  const snapshots = {
+  const snapshots: Record<string, string> = {
     'readme example': 'katex: $c = \\pm\\sqrt{a^2 + b^2}$',
     'inline katex': `
 This is inline katex: $c = \\pm\\sqrt{a^2 + b^2}$
@@ -133,7 +143,7 @@ $$
 `,
   };
 
-  const nonStandardSnapshots = {
+  const nonStandardSnapshots: Record<string, string> = {
     'non standard readme example': `
 afdaf$x=x^2$4$x=x^2$
 
@@ -162,7 +172,7 @@ $$
   }
 
   describe('specs', () => {
-    const hasOnly = specs.some(s => s.only);
+    const hasOnly = specs.some((s: Spec) => s.only);
     for (const s of specs) {
       if (hasOnly && !s.only) {
         continue;
@@ -174,7 +184,7 @@ $$
         const multiline = s.source.includes('\n');
         const md = multiline ? `${delimiter}\n${s.source}\n${delimiter}` : `${delimiter} ${s.source} ${delimiter}`;
         const expected = multiline ? s.rendered : `<p>${s.rendered}</p>\n`;
-        assert.strictEqual(normalize(marked(md)), normalize(expected));
+        assert.strictEqual(normalize(marked(md, {async: false})), normalize(expected));
       });
     }
   });
