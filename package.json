@@ -25,15 +25,14 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "test": "npm run build && npm run test:cover && npm run test:spec && npm run test:types && npm run test:exports && npm run lint",
+    "test": "npm run build && npm run test:katex && npm run test:spec && npm run test:types && npm run test:exports && npm run lint",
     "test:exports": "cd spec/exports && npm install && npx tsc",
-    "test:katex": "jest --verbose",
+    "test:katex": "node --test spec/index.test.js",
     "test:spec": "node --test spec/marked-tests.js",
-    "test:cover": "jest --coverage",
     "test:types": "tsd -f spec/index.test-d.ts -t src/index.d.ts",
     "lint": "eslint",
     "build": "rollup -c rollup.config.js",
-    "update-specs": "node ./update-specs.js && jest --updateSnapshot"
+    "update-specs": "node ./update-specs.js && node --test --test-update-snapshots spec/index.test.js"
   },
   "repository": {
     "type": "git",
@@ -50,8 +49,6 @@
     "marked": ">=4 <19"
   },
   "devDependencies": {
-    "@babel/core": "8.0.1",
-    "@babel/preset-env": "8.0.2",
     "@markedjs/eslint-config": "^1.0.14",
     "@markedjs/testutils": "18.0.5-0",
     "@rollup/plugin-node-resolve": "^16.0.3",
@@ -61,10 +58,8 @@
     "@semantic-release/github": "^12.0.8",
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.1",
-    "babel-jest": "^30.4.1",
     "cheerio": "^1.2.0",
     "globals": "^17.7.0",
-    "jest-cli": "^30.4.2",
     "katex": "^0.17.0",
     "marked": "^18.0.5",
     "node-fetch": "^3.3.2",
