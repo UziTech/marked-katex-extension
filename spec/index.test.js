@@ -1,3 +1,5 @@
+import { describe, test, beforeEach } from 'node:test';
+import assert from 'node:assert';
 import { marked } from 'marked';
 import markedKatex from '../src/index.js';
 import { readFileSync } from 'node:fs';
@@ -143,19 +145,19 @@ $$
   };
 
   for (const name in nonStandardSnapshots) {
-    test(name, () => {
+    test(name, (t) => {
       marked.use(markedKatex({
         nonStandard: true,
       }));
       const md = nonStandardSnapshots[name];
-      expect(marked(md)).toMatchSnapshot();
+      t.assert.snapshot(marked(md));
     });
   }
   for (const name in snapshots) {
-    test(name, () => {
+    test(name, (t) => {
       marked.use(markedKatex());
       const md = snapshots[name];
-      expect(marked(md)).toMatchSnapshot();
+      t.assert.snapshot(marked(md));
     });
   }
 
@@ -165,13 +167,14 @@ $$
       if (hasOnly && !s.only) {
         continue;
       }
-      (s.only ? test.only : (s.skip ? test.skip : test))(`Specs: ${s.name}`, () => {
+      const testFn = s.only ? test.only : (s.skip ? test.skip : test);
+      testFn(`Specs: ${s.name}`, () => {
         marked.use(markedKatex(s.options));
         const delimiter = s.options.displayMode ? '$$' : '$';
         const multiline = s.source.includes('\n');
         const md = multiline ? `${delimiter}\n${s.source}\n${delimiter}` : `${delimiter} ${s.source} ${delimiter}`;
         const expected = multiline ? s.rendered : `<p>${s.rendered}</p>\n`;
-        expect(normalize(marked(md))).toBe(normalize(expected));
+        assert.strictEqual(normalize(marked(md)), normalize(expected));
       });
     }
   });
