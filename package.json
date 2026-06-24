@@ -3,10 +3,10 @@
   "version": "5.1.10",
   "description": "MarkedJS extesion to render katex",
   "main": "./lib/index.cjs",
-  "module": "./src/index.js",
+  "module": "./src/index.ts",
   "browser": "./lib/index.umd.js",
   "type": "module",
-  "types": "./src/index.d.ts",
+  "types": "./src/index.ts",
   "keywords": [
     "marked",
     "katex",
@@ -18,8 +18,8 @@
   ],
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
-      "import": "./src/index.js",
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
       "require": "./lib/index.cjs"
     },
     "./package.json": "./package.json"
@@ -29,11 +29,11 @@
     "test:cover": "node --experimental-test-coverage ./spec/test.config.ts -- --cover",
     "test:exports": "cd spec/exports && npm install && npx tsc",
     "test:katex": "node --test ./spec/test.config.ts",
-    "test:spec": "node --test ./spec/marked-tests.js",
-    "test:types": "tsd -f ./spec/index.test-d.ts -t src/index.d.ts",
+    "test:spec": "node --test ./spec/marked-tests.ts",
+    "test:types": "tsd -f ./spec/index.test-d.ts -t src/index.ts",
     "lint": "eslint",
-    "build": "rollup -c rollup.config.js",
-    "update-specs": "node ./update-specs.js && node --test --test-update-snapshots ./spec/test.config.ts"
+    "build": "rollup -c rollup.config.ts",
+    "update-specs": "node ./update-specs.ts && node --test --test-update-snapshots ./spec/test.config.ts"
   },
   "repository": {
     "type": "git",
@@ -53,20 +53,25 @@
     "@markedjs/eslint-config": "^1.0.14",
     "@markedjs/testutils": "18.0.5-0",
     "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.8",
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.1",
+    "@types/node": "^26.0.0",
     "cheerio": "^1.2.0",
     "globals": "^17.7.0",
+    "jiti": "^2.7.0",
     "katex": "^0.17.0",
     "marked": "^18.0.5",
     "node-fetch": "^3.3.2",
     "rollup": "^4.62.2",
     "semantic-release": "^25.0.5",
-    "tsd": "^0.33.0"
+    "tsd": "^0.33.0",
+    "tslib": "^2.8.1",
+    "typescript": "^6.0.3"
   },
   "tsd": {
     "compilerOptions": {
