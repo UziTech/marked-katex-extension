@@ -3,9 +3,9 @@ import assert from 'node:assert';
 import { marked } from 'marked';
 import markedKatex, { type MarkedKatexOptions } from '../src/index.ts';
 import { readFileSync } from 'node:fs';
-import { resolve } from "node:path";
+import { resolve } from 'node:path';
 
-const specs = JSON.parse(readFileSync(resolve(import.meta.dirname, 'specs.json'), {encoding: 'utf-8'}));
+const specs = JSON.parse(readFileSync(resolve(import.meta.dirname, 'specs.json'), { encoding: 'utf-8' }));
 
 interface Spec {
   name: string;
@@ -184,7 +184,7 @@ $$
         const multiline = s.source.includes('\n');
         const md = multiline ? `${delimiter}\n${s.source}\n${delimiter}` : `${delimiter} ${s.source} ${delimiter}`;
         const expected = multiline ? s.rendered : `<p>${s.rendered}</p>\n`;
-        assert.strictEqual(normalize(marked(md, {async: false})), normalize(expected));
+        assert.strictEqual(normalize(marked(md, { async: false })), normalize(expected));
       });
     }
   });
