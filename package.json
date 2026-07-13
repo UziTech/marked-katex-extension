@@ -60,7 +60,7 @@
     "@semantic-release/github": "^12.0.9",
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.1",
-    "@types/node": "^26.1.0",
+    "@types/node": "^26.1.1",
     "cheerio": "^1.2.0",
     "globals": "^17.7.0",
     "jiti": "^2.7.0",
