@@ -65,7 +65,7 @@
     "globals": "^17.9.0",
     "jiti": "^2.7.0",
     "katex": "^0.18.1",
-    "marked": "^18.0.7",
+    "marked": "^18.0.9",
     "node-fetch": "^3.3.2",
     "rollup": "^4.62.4",
     "semantic-release": "^25.0.9",
