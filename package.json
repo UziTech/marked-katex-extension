@@ -3,7 +3,7 @@
   "version": "5.1.11",
   "description": "MarkedJS extesion to render katex",
   "main": "./lib/index.cjs",
-  "module": "./src/index.ts",
+  "module": "./lib/index.esm.js",
   "browser": "./lib/index.umd.js",
   "type": "module",
   "types": "./src/index.ts",
@@ -19,7 +19,7 @@
   "exports": {
     ".": {
       "types": "./src/index.ts",
-      "import": "./src/index.ts",
+      "import": "./lib/index.esm.js",
       "require": "./lib/index.cjs"
     },
     "./package.json": "./package.json"

@@ -25,4 +25,13 @@ export default [
     plugins: [typescript()],
     external: ['marked', 'katex'],
   },
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'lib/index.esm.js',
+      format: 'esm',
+    },
+    plugins: [typescript()],
+    external: ['marked', 'katex'],
+  },
 ];
