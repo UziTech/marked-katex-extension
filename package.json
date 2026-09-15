@@ -33,7 +33,7 @@
     "test:types": "npm run build:types && tsd -f ./index.test-d.ts",
     "lint": "eslint",
     "build": "rollup -c rollup.config.ts && npm run build:types",
-    "build:types": "node --input-type=module -e \"import { existsSync, readdirSync, rmSync } from 'node:fs'; import { join } from 'node:path'; const clean = dir => { for (const entry of readdirSync(dir, { withFileTypes: true })) { const file = join(dir, entry.name); if (entry.isDirectory()) { clean(file); } else if (/\\\\.d\\\\.ts(\\\\.map)?$/.test(entry.name)) { rmSync(file, { force: true }); } } }; if (existsSync('lib')) { clean('lib'); }\" && tsc -p tsconfig.types.json",
+    "build:types": "node ./build-types.mjs",
     "update-specs": "node ./update-specs.ts && node --test --test-update-snapshots ./spec/test.config.ts"
   },
   "repository": {
