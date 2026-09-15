@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { createRequire } from 'node:module';
 
 function clean(dir) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -20,7 +21,10 @@ if (existsSync('lib')) {
   clean('lib');
 }
 
-const result = spawnSync(process.execPath, ['node_modules/typescript/lib/tsc.js', '-p', 'tsconfig.types.json'], {
+const require = createRequire(import.meta.url);
+const tsc = require.resolve('typescript/bin/tsc');
+
+const result = spawnSync(process.execPath, [tsc, '-p', 'tsconfig.types.json'], {
   stdio: 'inherit',
 });
 
