@@ -7,7 +7,14 @@ rmSync('lib/index.d.ts', { force: true });
 rmSync('lib/index.d.ts.map', { force: true });
 
 const require = createRequire(import.meta.url);
-const tsc = require.resolve('typescript/bin/tsc');
+let tsc;
+
+try {
+  tsc = require.resolve('typescript/bin/tsc');
+} catch {
+  console.error('Unable to find the local TypeScript CLI. Run npm install to install devDependencies.');
+  process.exit(1);
+}
 
 const result = spawnSync(process.execPath, [tsc, '-p', 'tsconfig.types.json'], {
   stdio: 'inherit',
