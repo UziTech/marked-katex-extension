@@ -34,7 +34,7 @@
     "test:types": "npm run build:types && tsd -f ./index.test-d.ts -t ./lib/types/index.d.ts",
     "lint": "eslint",
     "build": "rollup -c rollup.config.ts && npm run build:types",
-    "build:types": "rm -rf ./lib/types ./lib/index.d.ts ./lib/index.d.ts.map && tsc -p tsconfig.types.json",
+    "build:types": "tsc -p tsconfig.types.json",
     "update-specs": "node ./update-specs.ts && node --test --test-update-snapshots ./spec/test.config.ts"
   },
   "repository": {
