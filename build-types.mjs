@@ -7,6 +7,9 @@ function clean(dir) {
     const file = join(dir, entry.name);
     if (entry.isDirectory()) {
       clean(file);
+      if (readdirSync(file).length === 0) {
+        rmSync(file, { recursive: true, force: true });
+      }
     } else if (/\.d\.ts(\.map)?$/.test(entry.name)) {
       rmSync(file, { force: true });
     }
@@ -17,8 +20,7 @@ if (existsSync('lib')) {
   clean('lib');
 }
 
-const result = spawnSync('tsc', ['-p', 'tsconfig.types.json'], {
-  shell: true,
+const result = spawnSync(process.execPath, ['node_modules/typescript/lib/tsc.js', '-p', 'tsconfig.types.json'], {
   stdio: 'inherit',
 });
 
