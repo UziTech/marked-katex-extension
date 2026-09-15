@@ -1,25 +1,10 @@
-import { existsSync, readdirSync, rmSync } from 'node:fs';
-import { join } from 'node:path';
+import { rmSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 
-function clean(dir) {
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const file = join(dir, entry.name);
-    if (entry.isDirectory()) {
-      clean(file);
-      if (readdirSync(file).length === 0) {
-        rmSync(file, { recursive: true, force: true });
-      }
-    } else if (/\.d\.ts(\.map)?$/.test(entry.name)) {
-      rmSync(file, { force: true });
-    }
-  }
-}
-
-if (existsSync('lib')) {
-  clean('lib');
-}
+rmSync('lib/types', { recursive: true, force: true });
+rmSync('lib/index.d.ts', { force: true });
+rmSync('lib/index.d.ts.map', { force: true });
 
 const require = createRequire(import.meta.url);
 const tsc = require.resolve('typescript/bin/tsc');

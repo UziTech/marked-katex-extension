@@ -5,7 +5,7 @@
     "emitDeclarationOnly": true,
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "outDir": "lib",
+    "outDir": "lib/types",
     "rootDir": "src",
     "strict": true,
     "target": "es2022"
