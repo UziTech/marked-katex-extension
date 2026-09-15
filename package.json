@@ -32,7 +32,7 @@
     "test:spec": "node --test ./spec/marked-tests.ts",
     "test:types": "tsd -f ./index.test-d.ts",
     "lint": "eslint",
-    "build": "rollup -c rollup.config.ts && tsc --declaration --emitDeclarationOnly --module nodenext --moduleResolution nodenext --target es2022 --outDir lib src/index.ts",
+    "build": "rollup -c rollup.config.ts && tsc -p tsconfig.types.json",
     "update-specs": "node ./update-specs.ts && node --test --test-update-snapshots ./spec/test.config.ts"
   },
   "repository": {
