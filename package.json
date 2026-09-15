@@ -30,7 +30,7 @@
     "test:exports": "cd spec/exports && npm install && npx tsc",
     "test:katex": "node --test ./spec/test.config.ts",
     "test:spec": "node --test ./spec/marked-tests.ts",
-    "test:types": "tsd -f ./spec/index.test-d.ts -t src/index.ts",
+    "test:types": "tsd -f ./index.test-d.ts",
     "lint": "eslint",
     "build": "rollup -c rollup.config.ts && tsc --declaration --emitDeclarationOnly --module nodenext --moduleResolution nodenext --target es2022 --outDir lib src/index.ts",
     "update-specs": "node ./update-specs.ts && node --test --test-update-snapshots ./spec/test.config.ts"
