@@ -1,4 +1,11 @@
 import katex from 'marked-katex-extension';
+import type { MarkedKatexOptions } from 'marked-katex-extension';
 import type { MarkedExtension } from 'marked';
 
-katex({}) satisfies MarkedExtension;
+const options: MarkedKatexOptions = {
+  throwOnError: false,
+  nonStandard: true,
+};
+
+katex() satisfies MarkedExtension;
+katex(options) satisfies MarkedExtension;

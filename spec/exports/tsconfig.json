@@ -4,5 +4,7 @@
     "noEmit": true,
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "strict": true,
+    "noImplicitReturns": true
   }
 }

@@ -6,7 +6,7 @@
   "module": "./lib/index.esm.js",
   "browser": "./lib/index.umd.js",
   "type": "module",
-  "types": "./src/index.ts",
+  "types": "./lib/types/index.d.ts",
   "keywords": [
     "marked",
     "katex",
@@ -14,11 +14,12 @@
   ],
   "files": [
     "lib/",
+    "lib/types/",
     "src/"
   ],
   "exports": {
     ".": {
-      "types": "./src/index.ts",
+      "types": "./lib/types/index.d.ts",
       "import": "./lib/index.esm.js",
       "require": "./lib/index.cjs"
     },
@@ -30,9 +31,10 @@
     "test:exports": "cd spec/exports && npm install && npx tsc",
     "test:katex": "node --test ./spec/test.config.ts",
     "test:spec": "node --test ./spec/marked-tests.ts",
-    "test:types": "tsd -f ./spec/index.test-d.ts -t src/index.ts",
+    "test:types": "npm run build:types && tsd -f ./index.test-d.ts -t ./lib/types/index.d.ts",
     "lint": "eslint",
-    "build": "rollup -c rollup.config.ts",
+    "build": "rollup -c rollup.config.ts && npm run build:types",
+    "build:types": "tsc -p tsconfig.types.json",
     "update-specs": "node ./update-specs.ts && node --test --test-update-snapshots ./spec/test.config.ts"
   },
   "repository": {

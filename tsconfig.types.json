@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "outDir": "lib/types",
+    "rootDir": "src",
+    "strict": true,
+    "target": "es2022"
+  },
+  "files": ["src/index.ts"]
+}
