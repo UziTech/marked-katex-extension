@@ -64,7 +64,7 @@
     "@semantic-release/release-notes-generator": "^14.1.1",
     "@types/node": "^26.6.6",
     "cheerio": "^1.2.0",
-    "globals": "^17.13.0",
+    "globals": "^17.14.0",
     "jiti": "^2.7.0",
     "katex": "^0.19.1",
     "marked": "^18.1.2",
